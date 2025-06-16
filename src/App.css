@@ -1,0 +1,22 @@
+@media print {
+  /* Hide anything marked .no-print */
+  .no-print {
+    display: none !important;
+  }
+
+  /* Prevent page breaks inside the invoice container */
+  .invoice-container {
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+
+  /* Force a single A4 page with small margins */
+  @page {
+    size: A4 portrait;
+    margin: 1cm;
+  }
+
+  body {
+    margin: 0;
+  }
+}
