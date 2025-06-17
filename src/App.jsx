@@ -10,7 +10,8 @@ function App() {
     invoiceNumber: generateInvoiceNumber(),
     date: getCurrentDate(),
     items: [],
-    notes: "Thank you for your business!",
+    notes: "Thank you for your business! ",
+    copyright: " © Created by Codivora Solutions 2025",
     companyName: "BANGA'S NATION",
     companyAddress: "DEALERS IN ALL KIND OF GREASE AND LUBRICANT",
     officeAddress: "God's Own Plaza, Shop 4, Aspmda Int'l Trade Fair Complex, Badagry Expressway, Ojo, Lagos.",
@@ -288,8 +289,17 @@ function App() {
                 name="notes"
                 value={invoice.notes}
                 onChange={handleChange}
+                disabled
                 rows="3"
                 className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
+              />
+               <textarea
+                name="copyright"
+                value={invoice.copyright}
+                onChange={handleChange}
+                rows="3"
+                disabled
+                className="mt-1 flex justify-center items-center w-full  border-gray-300 shadow-sm focus:border-green-500 focus:ring-green-500"
               />
             </div>
             <div className="flex flex-col sm:flex-row justify-end gap-3">
