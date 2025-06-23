@@ -19,6 +19,14 @@ function App() {
     companyEmail: "eobumkaneme@gmail.com"
   });
 
+  // formats a number with commas and two decimal places, e.g. 12345.6 → "12,345.60"
+const formatAmount = (amount) =>
+  amount.toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+
   function generateInvoiceNumber() {
     return String(Math.floor(100000 + Math.random() * 900000));
   }
@@ -271,11 +279,13 @@ function App() {
             <div className="w-full md:w-1/3">
               <div className="flex justify-between py-2">
                 <span>Subtotal:</span>
-                <span>₦{subtotal.toFixed(2)}</span>
+                <span>₦{formatAmount(subtotal)}</span>
+
               </div>
               <div className="flex justify-between py-2 font-bold text-lg border-t border-gray-200 mt-2">
                 <span>Total:</span>
-                <span>₦{total.toFixed(2)}</span>
+                <span>₦{formatAmount(total)}</span>
+
               </div>
             </div>
           </div>
